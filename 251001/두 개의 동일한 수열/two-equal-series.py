@@ -13,7 +13,7 @@ def ary(ary):
 
             
         
-        return ary
+    return ary
 A =ary(A)
 B =ary(B)
 if A==B:
