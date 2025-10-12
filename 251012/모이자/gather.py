@@ -1,6 +1,6 @@
 n = int(input())
 A = list(map(int, input().split()))
-result = 0
+result = float('inf')
 # Please write your code here.
 for i in range(n):
     current = 0
