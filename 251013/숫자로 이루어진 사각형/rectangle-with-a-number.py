@@ -4,13 +4,11 @@ n = int(input())
 
 def four(n):
     k=1
-    for i in range(n):
-        while(1):
+    for _ in range(n):
+        for _ in range(n):
+            if k==10:
+                k = 1
             print(k,end=' ')
-            if k%n==0:
-                print('\n')
-                k+=1
-                break
             k+=1
-
+        print('')
 four(n)
