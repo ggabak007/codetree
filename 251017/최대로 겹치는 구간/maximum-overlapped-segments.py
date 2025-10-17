@@ -15,5 +15,8 @@ for i in range(len(nums)-1):
     else:
         maxk = k
         k = 1
-print(maxk)
+if k> maxk:
+    print(k)
+else:
+    print(maxk)
     
