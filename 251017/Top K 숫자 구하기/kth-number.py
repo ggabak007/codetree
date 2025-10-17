@@ -3,9 +3,7 @@ nums = list(map(int, input().split()))
 
 # Please write your code here.
 nums.sort()
-i=1
-for k in nums:
-    if i==k:
-        print(k)
+for i in range(n):
+    if i==k-1:
+        print(nums[i])
         break
-    i+=1
