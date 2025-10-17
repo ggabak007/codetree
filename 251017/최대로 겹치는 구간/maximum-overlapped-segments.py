@@ -2,21 +2,20 @@ n = int(input())
 segments = [tuple(map(int, input().split())) for _ in range(n)]
 
 # Please write your code here.
-nums = []
-for k in range(n):
-    for i in range(segments[k][0],segments[k][1],1):
-        nums.append(i)
-nums.sort()
-maxk = 0
-k = 1
-for i in range(len(nums)-1):
-    if nums[i+1] == nums[i]:
-        k +=1
-    else:
-        maxk = k
-        k = 1
-if k> maxk:
-    print(k)
-else:
-    print(maxk)
+events = []
+for start, end in segments:
+    events.append((start,1))
+    events.append((end,-1))
+
+events.sort(key=lambda x:(x[0],-x[1]))
+
+current = 0
+maxe = 0
+
+for  _,event_type in events:
+    current += event_type
+    if current>maxe:
+        maxe = current
+
+print(maxe)
     
