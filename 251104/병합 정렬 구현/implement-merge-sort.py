@@ -3,14 +3,17 @@ arr = list(map(int, input().split()))
 
 # Please write your code here.
 def merge_sort(ary):
+    if len(ary)<=1:
+        return
+
     N = len(ary)//2
-    left = ary[N:]
-    right = ary[:N]
+    left = ary[:N]
+    right = ary[N:]
     
     sort_left = merge_sort(left)
     sort_right = merge_sort(right)
 
-    return sort_left,sort_right
+    return merge(sort_left,sort_right)
 
 def merge(left,right):
     merge_list = []
@@ -29,6 +32,5 @@ def merge(left,right):
 
     return merge_list
     
-
-arr2 = merge_sort(arr)
+arr2 = merge(arr)
 print(*arr2)
