@@ -4,7 +4,7 @@ arr = list(map(int, input().split()))
 # Please write your code here.
 def merge_sort(ary):
     if len(ary)<=1:
-        return
+        return ary
 
     N = len(ary)//2
     left = ary[:N]
@@ -27,10 +27,9 @@ def merge(left,right):
             merge_list.append(right[r])
             r+=1
     
-    merge_list += left
-    merge_right += right
-
+    merge_list += left[l:]
+    merge_list += right[r:]
     return merge_list
     
-arr2 = merge(arr)
-print(*arr2)
+
+print(*merge_sort(arr))
